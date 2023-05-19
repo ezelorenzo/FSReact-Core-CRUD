@@ -1,9 +1,11 @@
+using ProyectoCRUD.Models;//this was added to use the models folder here
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddDbContext<ReactAppContext>();//this is what I need to add to use my context
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
