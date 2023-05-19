@@ -5,7 +5,7 @@ using ProyectoCRUD.Models;//added to use the context
 
 namespace ProyectoCRUD.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]")]//this is our api
     [ApiController]
     public class ContactController : ControllerBase
     {
