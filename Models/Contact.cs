@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ProyectoCRUD.Models;
 
-public partial class Contacto
+public partial class Contact
 {
     public int IdContacto { get; set; }
 
