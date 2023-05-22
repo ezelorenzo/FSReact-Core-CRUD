@@ -5,11 +5,11 @@ namespace ProyectoCRUD.Models;
 
 public partial class Contact
 {
-    public int IdContacto { get; set; }
+    public int IdContact { get; set; }
 
-    public string? Nombre { get; set; }
+    public string? Name { get; set; }
 
-    public string? Correo { get; set; }
+    public string? Mail { get; set; }
 
-    public string? Telefono { get; set; }
+    public string? Phone { get; set; }
 }

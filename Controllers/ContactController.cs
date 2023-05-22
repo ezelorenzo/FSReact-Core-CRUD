@@ -21,7 +21,7 @@ namespace ProyectoCRUD.Controllers
         public async Task<IActionResult> ReturnList()
         {
             List<Contact> returnList 
-                = await _dbcontext.Contacts.OrderByDescending(c => c.IdContacto).ToListAsync();
+                = await _dbcontext.Contacts.OrderByDescending(c => c.IdContact).ToListAsync();
 
             return StatusCode(StatusCodes.Status200OK, returnList);
         }

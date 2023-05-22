@@ -25,23 +25,23 @@ public partial class ReactAppContext : DbContext
     {
         modelBuilder.Entity<Contact>(entity =>
         {
-            entity.HasKey(e => e.IdContacto).HasName("PK__Contacto__4B1329C7B65C500D");
+            entity.HasKey(e => e.IdContact).HasName("PK__Contact__4B1329C7B65C500D");
 
             entity.ToTable("Contacto");
 
-            entity.Property(e => e.IdContacto).HasColumnName("idContacto");
-            entity.Property(e => e.Correo)
+            entity.Property(e => e.IdContact).HasColumnName("idContact");
+            entity.Property(e => e.Mail)
                 .HasMaxLength(50)
                 .IsUnicode(false)
-                .HasColumnName("correo");
-            entity.Property(e => e.Nombre)
+                .HasColumnName("mail");
+            entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .IsUnicode(false)
-                .HasColumnName("nombre");
-            entity.Property(e => e.Telefono)
+                .HasColumnName("name");
+            entity.Property(e => e.Phone)
                 .HasMaxLength(50)
                 .IsUnicode(false)
-                .HasColumnName("telefono");
+                .HasColumnName("phone");
         });
 
         OnModelCreatingPartial(modelBuilder);
