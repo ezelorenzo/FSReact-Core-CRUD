@@ -27,7 +27,7 @@ public partial class ReactAppContext : DbContext
         {
             entity.HasKey(e => e.IdContact).HasName("PK__Contact__4B1329C7B65C500D");
 
-            entity.ToTable("Contacto");
+            entity.ToTable("Contact");
 
             entity.Property(e => e.IdContact).HasColumnName("idContact");
             entity.Property(e => e.Mail)

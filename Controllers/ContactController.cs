@@ -20,10 +20,17 @@ namespace ProyectoCRUD.Controllers
         [Route("ReturnList")]
         public async Task<IActionResult> ReturnList()
         {
-            List<Contact> returnList 
+            try
+            {
+                List<Contact> returnList
                 = await _dbcontext.Contacts.OrderByDescending(c => c.IdContact).ToListAsync();
 
-            return StatusCode(StatusCodes.Status200OK, returnList);
+                return StatusCode(StatusCodes.Status200OK, returnList);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest();
+            }            
         }
 
         [HttpPost]

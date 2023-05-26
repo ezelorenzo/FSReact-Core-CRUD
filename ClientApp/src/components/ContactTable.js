@@ -1,7 +1,7 @@
 ﻿
-import { Table } from "reactstrap"
+import { Table, Button } from "reactstrap"
 
-const ContactTable = () => {
+const ContactTable = ({ data }) => {
 
     return(
         <Table striped responsive>
@@ -14,7 +14,25 @@ const ContactTable = () => {
                 </tr>
             </thead>
             <tbody>
-
+                {
+                    (data.lenght < 1) ? (
+                        <tr>
+                            <td colSpan = "4">Sin Registros</td>
+                        </tr>
+                    ) : (
+                            data.map((item) =>                                
+                                <tr key={item.idContact}>
+                                    <td>{item.name}</td>
+                                    <td>{item.mail}</td>
+                                    <td>{item.phone}</td>
+                                    <td>
+                                        <Button color="primary" size="sm" className="me-2">Editar</Button> 
+                                        <Button color="danger" size="sm">Eliminar</Button>
+                                    </td>
+                                </tr>
+                                )                            
+                            )
+                }
             </tbody>
         </Table>           
         )
