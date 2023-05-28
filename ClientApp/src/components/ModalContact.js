@@ -36,6 +36,7 @@ const ModalContact = ({ showModal, setShowModal,SaveContact, edit, setEdit, edit
         else {
             editContact(contact)
         }
+        SetContact(contactModel)
     }
 
     useEffect(() => {

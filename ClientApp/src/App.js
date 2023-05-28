@@ -61,6 +61,23 @@ const App = () => {
         }
     }
 
+    const deleteContact = async (id) => {
+
+        var response = window.confirm("The contact will be deleted, press yes to continue")
+
+        if (!response) {
+            return;
+        }       
+
+        const deleteResponse = await fetch("api/contact/DeleteList/" + id, {
+            method: 'DELETE'
+        })
+
+        if (deleteResponse.ok) {            
+            showContacts();
+        }
+    }
+
     return (
         <Container>
             <Row className="mt-5">
@@ -73,9 +90,10 @@ const App = () => {
                             <Button size="sm" color="success" onClick={() => setShowModal(!showModal) }>New Contact</Button>                            
                             <hr></hr>
                             <ContactTable data={contacts}
-                                setEdit={ setEdit }
-                                showModal={ showModal }
-                                setShowModal={ setShowModal }
+                                setEdit={setEdit}
+                                showModal={showModal}
+                                setShowModal={setShowModal}
+                                deleteContact={deleteContact}
                             />
                         </CardBody>
                     </Card>
@@ -88,7 +106,7 @@ const App = () => {
                 SaveContact={saveContact}
                 edit={edit}
                 setEdit={edit}
-                editContact={editContact}
+                editContact={editContact}                
             />
 
         </Container>

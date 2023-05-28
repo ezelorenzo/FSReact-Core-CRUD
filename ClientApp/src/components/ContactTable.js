@@ -1,7 +1,7 @@
 ﻿
 import { Table, Button } from "reactstrap"
 
-const ContactTable = ({ data, setEdit, showModal, setShowModal }) => {
+const ContactTable = ({ data, setEdit, showModal, setShowModal, deleteContact }) => {
 
     const sendData = (contact) => {
         setEdit(contact)
@@ -33,7 +33,7 @@ const ContactTable = ({ data, setEdit, showModal, setShowModal }) => {
                                     <td>{item.phone}</td>
                                     <td>
                                         <Button color="primary" size="sm" className="me-2" onClick={ () => sendData(item) }>Editar</Button> 
-                                        <Button color="danger" size="sm">Eliminar</Button>
+                                        <Button color="danger" size="sm" onClick={() =>deleteContact(item.idContact)}>Eliminar</Button>
                                     </td>
                                 </tr>
                                 )                            
