@@ -1,7 +1,13 @@
 ﻿
 import { Table, Button } from "reactstrap"
 
-const ContactTable = ({ data }) => {
+const ContactTable = ({ data, setEdit, showModal, setShowModal }) => {
+
+    const sendData = (contact) => {
+        setEdit(contact)
+        setShowModal(!showModal)
+    }
+
 
     return(
         <Table striped responsive>
@@ -26,7 +32,7 @@ const ContactTable = ({ data }) => {
                                     <td>{item.mail}</td>
                                     <td>{item.phone}</td>
                                     <td>
-                                        <Button color="primary" size="sm" className="me-2">Editar</Button> 
+                                        <Button color="primary" size="sm" className="me-2" onClick={ () => sendData(item) }>Editar</Button> 
                                         <Button color="danger" size="sm">Eliminar</Button>
                                     </td>
                                 </tr>
